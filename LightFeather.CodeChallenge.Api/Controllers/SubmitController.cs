@@ -39,6 +39,11 @@ public class SubmitController(ILogger<SubmitController> logger, IInputSanitation
         }
 
         _logger.LogInformation("Submission is valid");
+        _logger.LogInformation("FirstName: {FirstName}", submitSupervisorDto.FirstName);
+        _logger.LogInformation("LastName: {LastName}", submitSupervisorDto.LastName);
+        _logger.LogInformation("Email: {Email}", submitSupervisorDto.Email);
+        _logger.LogInformation("PhoneNumber: {PhoneNumber}", submitSupervisorDto.PhoneNumber);
+        _logger.LogInformation("Supervisor: {Supervisor}", submitSupervisorDto.Supervisor);
         return Ok();
     }
 }
