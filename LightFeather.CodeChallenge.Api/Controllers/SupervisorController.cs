@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LightFeather.CodeChallenge.Api.Controllers;
 
 [ApiController]
-[Route("api/supervisors")]
+[Route(LightFeatherUrlConstant.SupervisorControllerUrl)]
 public class SupervisorController(ILogger<SupervisorController> logger, IHttpClientFactory httpClientFactory, ISupervisorMapper supervisorMapper) : ControllerBase
 {
     private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;

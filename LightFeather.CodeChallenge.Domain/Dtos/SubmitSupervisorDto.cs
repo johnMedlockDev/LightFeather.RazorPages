@@ -20,4 +20,9 @@ public class SubmitSupervisorDto
 
     [JsonPropertyName("Supervisor")]
     public string? Supervisor { get; set; }
+
+    public override string ToString()
+    {
+        return $"FirstName: {FirstName} \nLastName: {LastName} \nEmail: {Email} \nPhoneNumber: {PhoneNumber} \nSupervisor: {Supervisor}";
+    }
 }
