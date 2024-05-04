@@ -2,8 +2,8 @@
 
 ## Overview
 
-The application consists of an Api layer, a Ui layer, an Infrastructure Layer, a Database, and a Domain Layer.
-The application is dockerized.
+The application consists of an API layer, a UI layer, an Infrastructure Layer, a Database, and a Domain Layer.
+The application is also dockerized.
 
 # Technologies Used
 - .Net Core 8
