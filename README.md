@@ -1,9 +1,14 @@
 # LightFeather Code Challenge
 
+---
+
 ## Overview
 
 The application consists of an API layer, a UI layer, an Infrastructure Layer, a Database, and a Domain Layer.
+
 The application is also dockerized.
+
+---
 
 # Technologies Used
 - .Net Core 8
@@ -15,10 +20,14 @@ The application is also dockerized.
 - SQL Server
 - Entity Framework Core
 
+---
+
 ## Prerequisites
 
 - [Git](https://git-scm.com/downloads)
 - [Docker](https://www.docker.com/products/docker-desktop/)
+
+---
 
 ## Run the application
 
@@ -47,10 +56,15 @@ Here you will see the swagger documentation for the application Api Layer.
 
 Test the form by inputting values for the various fields.
 
+---
+
 ## Expected Behavior
+
 You will see a success message if the form is submitted successfully.
 
 You will see error messages if the form is not submitted successfully in the UI and the logs.
+
+---
 
 ## How I would improve the application
 
@@ -58,12 +72,15 @@ You will see error messages if the form is not submitted successfully in the UI 
 - I would test the application using xUnit and Postman.
 - I would spend more time on the UI to make it better. IE: loading animations, fonts, colors, shading, etc.
 
+---
 
 ### Troubleshooting
 
 - If you get no response immediately after it starts it's probably because it's applying the migrations. I just waited a few seconds and it worked fine for me.
 - When you see something similar to this in your API logs. Then you're good to go.
 ![Good To Go](https://github.com/johnMedlockDev/LightFeather.CodeChallenge/assets/42301475/e74c6cb9-5aa8-4267-9ab8-1a9d306e40c0)
+
+---
 
 ### Screenshots
 
@@ -84,4 +101,3 @@ You will see error messages if the form is not submitted successfully in the UI 
 
 #### DB Persistence
 ![DB Persistence](https://github.com/johnMedlockDev/LightFeather.CodeChallenge/assets/42301475/4efb0d1d-4217-443d-b0b6-c90cb84d2dff)
-
