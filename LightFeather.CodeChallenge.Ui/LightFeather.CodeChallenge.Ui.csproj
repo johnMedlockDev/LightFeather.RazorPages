@@ -6,6 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>0bb0d275-cad6-48c2-914b-0e1c02ce6f84</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	<RuntimeIdentifiers>linux-x64</RuntimeIdentifiers>
+	<PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
 
   <ItemGroup>

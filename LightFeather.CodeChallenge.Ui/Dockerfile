@@ -1,22 +1,29 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER app
-WORKDIR /app
-
+# Use the SDK image to build the application
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+
+# Copy csproj files separately to utilize Docker cache
 COPY ["LightFeather.CodeChallenge.Domain/LightFeather.CodeChallenge.Domain.csproj", "LightFeather.CodeChallenge.Domain/"]
 COPY ["LightFeather.CodeChallenge.Ui/LightFeather.CodeChallenge.Ui.csproj", "LightFeather.CodeChallenge.Ui/"]
-RUN dotnet restore "./LightFeather.CodeChallenge.Ui/LightFeather.CodeChallenge.Ui.csproj"
+
+# Restore as distinct layers
+RUN dotnet restore "LightFeather.CodeChallenge.Ui/LightFeather.CodeChallenge.Ui.csproj" --runtime linux-x64
+
+# Copy everything else and build
 COPY . .
 WORKDIR "/src/LightFeather.CodeChallenge.Ui"
-RUN dotnet build "./LightFeather.CodeChallenge.Ui.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet publish "LightFeather.CodeChallenge.Ui.csproj" -c Release -o /app/publish --no-restore --runtime linux-x64 -p:PublishReadyToRun=true
 
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./LightFeather.CodeChallenge.Ui.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
-
-FROM base AS final
+# Final stage/image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/publish .
+
+# Set a non-root user for security purposes
+USER app
+
+# Healthcheck (optional)
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD curl --fail http://localhost/health || exit 1
+
+# Define the entry point which starts the application
 ENTRYPOINT ["dotnet", "LightFeather.CodeChallenge.Ui.dll"]
