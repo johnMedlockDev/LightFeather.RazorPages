@@ -1,13 +1,36 @@
+x-common-env: &common-env
+  ASPNETCORE_ENVIRONMENT: Release
+  SQL_CONNECTION_STRING: Server=db;Database=LightFeather;User Id=sa;Password=yourStrong(!)Password;TrustServerCertificate=true;Connection Timeout=600;
+
+volumes:
+  light_feather_sql_data:
+
 networks:
   light_feather_net:
     driver: bridge
 
 services:
 
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "yourStrong(!)Password"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - light_feather_sql_data:/var/opt/mssql
+    networks:
+      - light_feather_net
+
   api:
     build:
       context: .
       dockerfile: LightFeather.CodeChallenge.Api/Dockerfile
+    environment:
+      <<: *common-env
+    depends_on:
+      - db
     healthcheck:
       test: ["CMD-SHELL", "curl --fail http://localhost/health || exit 1"]
       interval: 30s
@@ -18,10 +41,13 @@ services:
       - "8081:8081"
     networks:
       - light_feather_net
+
   ui:
     build:
       context: .
       dockerfile: LightFeather.CodeChallenge.Ui/Dockerfile
+    environment:
+      <<: *common-env
     depends_on:
       - api
     healthcheck:

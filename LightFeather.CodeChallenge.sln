@@ -14,7 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightFeather.CodeChallenge.Ui", "LightFeather.CodeChallenge.Ui\LightFeather.CodeChallenge.Ui.csproj", "{AF0F66E7-051E-48E2-9A93-1B36BDB94A77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightFeather.CodeChallenge.Ui", "LightFeather.CodeChallenge.Ui\LightFeather.CodeChallenge.Ui.csproj", "{AF0F66E7-051E-48E2-9A93-1B36BDB94A77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightFeather.CodeChallenge.Infrastructure", "LightFeather.CodeChallenge.Infrastructure\LightFeather.CodeChallenge.Infrastructure.csproj", "{FB5C8914-DC7F-4227-8729-8D03282B6064}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,10 @@ Global
 		{AF0F66E7-051E-48E2-9A93-1B36BDB94A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF0F66E7-051E-48E2-9A93-1B36BDB94A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF0F66E7-051E-48E2-9A93-1B36BDB94A77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB5C8914-DC7F-4227-8729-8D03282B6064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5C8914-DC7F-4227-8729-8D03282B6064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB5C8914-DC7F-4227-8729-8D03282B6064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB5C8914-DC7F-4227-8729-8D03282B6064}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

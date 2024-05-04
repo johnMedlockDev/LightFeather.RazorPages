@@ -1,21 +1,26 @@
-﻿using LightFeather.CodeChallenge.Api.Services.Interfaces;
+﻿using LightFeather.CodeChallenge.Api.Mappers.Interfaces;
+using LightFeather.CodeChallenge.Api.Services.Interfaces;
 using LightFeather.CodeChallenge.Domain.Constants;
 using LightFeather.CodeChallenge.Domain.Dtos;
+using LightFeather.CodeChallenge.Infrastructure.Repositories.CommandRepositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LightFeather.CodeChallenge.Api.Controllers;
 
 [ApiController]
 [Route(LightFeatherUrlConstant.SubmitControllerUrl)]
-public class SubmitController(ILogger<SubmitController> logger, IInputSanitationService inputSanitationService, ISubmitControllerValidatorService submitControllerValidatorService) : ControllerBase
+public class SubmitController(ILogger<SubmitController> logger, IInputSanitationService inputSanitationService, ISubmitControllerValidatorService submitControllerValidatorService, ISubmitSupervisorCommandRepository submitSupervisorCommandRepository, ISubmitSupervisorMapper submitSupervisorMapper) : ControllerBase
 {
     private readonly ILogger<SubmitController> _logger = logger;
     private readonly ISubmitControllerValidatorService _submitControllerValidatorService = submitControllerValidatorService;
+    private readonly IInputSanitationService _inputSanitationService = inputSanitationService;
+    private readonly ISubmitSupervisorCommandRepository _submitSupervisorCommandRepository = submitSupervisorCommandRepository;
+    private readonly ISubmitSupervisorMapper _submitSupervisorMapper = submitSupervisorMapper;
 
     [HttpPost(Name = "PostSubmit")]
-    public IActionResult Post(SubmitSupervisorDto submitSupervisorDto)
+    public async Task<IActionResult> PostAsync(SubmitSupervisorDto submitSupervisorDto)
     {
-        inputSanitationService.TrimInputFields(submitSupervisorDto);
+        _inputSanitationService.TrimInputFields(submitSupervisorDto);
 
         _logger.LogInformation("Received submission for supervisor: {FirstName} {LastName}", submitSupervisorDto.FirstName, submitSupervisorDto.LastName);
 
@@ -40,6 +45,10 @@ public class SubmitController(ILogger<SubmitController> logger, IInputSanitation
 
         _logger.LogInformation("Submission is valid");
         _logger.LogInformation("\nSubmitSupervisorDto: \n{submitSupervisorDto}\n", submitSupervisorDto.ToString());
+
+        var entity = _submitSupervisorMapper.Map(submitSupervisorDto);
+        await _submitSupervisorCommandRepository.AddAsync(entity);
+
         return Ok();
     }
 }

@@ -4,6 +4,7 @@ WORKDIR /src
 
 # Copy csproj files separately to utilize Docker cache
 COPY ["LightFeather.CodeChallenge.Domain/LightFeather.CodeChallenge.Domain.csproj", "LightFeather.CodeChallenge.Domain/"]
+COPY ["LightFeather.CodeChallenge.Infrastructure/LightFeather.CodeChallenge.Infrastructure.csproj", "LightFeather.CodeChallenge.Infrastructure/"]
 COPY ["LightFeather.CodeChallenge.Api/LightFeather.CodeChallenge.Api.csproj", "LightFeather.CodeChallenge.Api/"]
 
 # Restore as distinct layers

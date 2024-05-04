@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LightFeather.CodeChallenge.Domain\LightFeather.CodeChallenge.Domain.csproj" />
+    <ProjectReference Include="..\LightFeather.CodeChallenge.Infrastructure\LightFeather.CodeChallenge.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
