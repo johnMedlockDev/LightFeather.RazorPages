@@ -61,7 +61,9 @@ You will see error messages if the form is not submitted successfully in the UI 
 
 ### Troubleshooting
 
-- If you get no response immediately after it starts it's probably because it's applying the migrations. I just waited a minute and it worked fine for me.
+- If you get no response immediately after it starts it's probably because it's applying the migrations. I just waited a few seconds and it worked fine for me.
+- When you see something similar to this in your API logs. Then you're good to go.
+![Good To Go](https://github.com/johnMedlockDev/LightFeather.CodeChallenge/assets/42301475/e74c6cb9-5aa8-4267-9ab8-1a9d306e40c0)
 
 ### Screenshots
 
