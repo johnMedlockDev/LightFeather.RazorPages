@@ -2,7 +2,7 @@
 
 ## Overview
 
-The application consists of an Api layer, a Ui layer, and a Class Library.
+The application consists of an Api layer, a Ui layer, an Infrastructure Layer, a Database, and a Domain Layer.
 The application is dockerized.
 
 # Technologies Used
@@ -12,6 +12,13 @@ The application is dockerized.
 - Web API
 - Class Library
 - Git
+- SQL Server
+- Entity Framework Core
+
+## Prerequisites
+
+- [Git](https://git-scm.com/downloads)
+- [Docker](https://www.docker.com/products/docker-desktop/)
 
 ## Run the application
 
@@ -46,9 +53,15 @@ You will see a success message if the form is submitted successfully.
 You will see error messages if the form is not submitted successfully in the UI and the logs.
 
 ## How I would improve the application
-- I would add a database to store the form data.
+
+- <del>I would add a database to store the form data.</del>
 - I would test the application using xUnit and Postman.
 - I would spend more time on the UI to make it better. IE: loading animations, fonts, colors, shading, etc.
+
+
+### Troubleshooting
+
+- If you get no response immediately after it starts it's probably because it's applying the migrations. I just waited a minute and it worked fine for me.
 
 ### Screenshots
 
@@ -66,3 +79,7 @@ You will see error messages if the form is not submitted successfully in the UI 
 
 #### UI Validation Success
 ![UI Validation Success](https://github.com/johnMedlockDev/LightFeather.CodeChallenge/assets/42301475/e9f43afc-1855-4d22-a457-8a964a1fafd3)
+
+#### DB Persistence
+![DB Persistence](https://github.com/johnMedlockDev/LightFeather.CodeChallenge/assets/42301475/4efb0d1d-4217-443d-b0b6-c90cb84d2dff)
+
