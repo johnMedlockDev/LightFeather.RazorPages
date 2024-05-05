@@ -76,9 +76,9 @@ You will see error messages if the form is not submitted successfully in the UI 
 
 ### Database Access
 
-username: sa
-password: yourStrong(!)Password
-host: localhost
+- username: sa
+- password: yourStrong(!)Password
+- host: localhost
 
 ---
 
