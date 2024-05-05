@@ -74,6 +74,14 @@ You will see error messages if the form is not submitted successfully in the UI 
 
 ---
 
+### Database Access
+
+username: sa
+password: yourStrong(!)Password
+host: localhost
+
+---
+
 ### Troubleshooting
 
 - If you get no response immediately after it starts it's probably because it's applying the migrations. I just waited a few seconds and it worked fine for me.
