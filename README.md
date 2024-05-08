@@ -93,19 +93,16 @@ You will see error messages if the form is not submitted successfully in the UI 
 ### Screenshots
 
 #### Swagger
-![Swagger](https://github.com/johnMedlockDev/LightFeather/assets/42301475/c7e09d1c-c298-4658-ac75-d5792cf936ba)
+![image](https://github.com/johnMedlockDev/LightFeather.RazorPages/assets/42301475/6b8439e6-37bc-4717-8a41-2b3f0848155a)
 
 #### UI
-![UI](https://github.com/johnMedlockDev/LightFeather/assets/42301475/dcb6ee12-5e30-4f70-9c93-c05448047c82)
+![image](https://github.com/johnMedlockDev/LightFeather.RazorPages/assets/42301475/ff2a279d-6e6f-4ae2-8be8-f5b0f1cc2cf8)
 
 #### UI Validation
-![UI Validation](https://github.com/johnMedlockDev/LightFeather/assets/42301475/fbfc2e84-1633-4fc4-9ebe-87c167210656)
-
-#### UI Validation Fixed
-![UI Validation Fixed](https://github.com/johnMedlockDev/LightFeather/assets/42301475/b38706b6-f43a-4a8c-b736-1d0977c5532d)
+![image](https://github.com/johnMedlockDev/LightFeather.RazorPages/assets/42301475/2af19062-b588-458d-9d60-9838c8342858)
 
 #### UI Validation Success
-![UI Validation Success](https://github.com/johnMedlockDev/LightFeather/assets/42301475/e9f43afc-1855-4d22-a457-8a964a1fafd3)
+![image](https://github.com/johnMedlockDev/LightFeather.RazorPages/assets/42301475/b6e540b1-44ea-4da2-9751-63a642d838a8)
 
 #### DB Persistence
-![DB Persistence](https://github.com/johnMedlockDev/LightFeather/assets/42301475/4efb0d1d-4217-443d-b0b6-c90cb84d2dff)
+![image](https://github.com/johnMedlockDev/LightFeather.RazorPages/assets/42301475/bc7bfb85-36ec-4900-be63-e87ce64a408c)
