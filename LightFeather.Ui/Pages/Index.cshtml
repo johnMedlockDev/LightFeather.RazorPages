@@ -1,0 +1,69 @@
+﻿@page
+@model LightFeather.Ui.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Notification Form";
+}
+
+<form method="post" class="container bg-light border p-4">
+    <div class="form-group row bg-primary">
+        <h2 class="mb-3 text-center bg-primary text-white mb-2 mt-2">Notification Form</h2>
+    </div>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group row mb-2">
+        <div class="form-group col">
+            <label asp-for="FirstName" class="col-form-label fw-bold">First Name</label>
+            <input asp-for="FirstName" class="form-control" placeholder="John" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <div class="form-group col">
+            <label asp-for="LastName" class="col-sm-2 col-form-label fw-bold">Last Name</label>
+            <input asp-for="LastName" class="form-control" placeholder="Medlock" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row mb-2 mt-2">
+        <label class="row-form-label fw-bold fst-italic">How would you prefer to be notified?</label>
+    </div>
+
+    <div class="form-group row mb-2">
+        <div class="form-group col">
+            <input asp-for="EmailCheckBox" class="form-check-input" type="checkbox" id="EmailCheckBox">
+            <label class="form-check-label fw-bold" asp-for="EmailCheckBox">Email</label>
+            <input asp-for="Email" class="form-control" id="EmailInput" placeholder="john.medlock.dev@gmail.com" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group col">
+            <input asp-for="PhoneCheckBox" class="form-check-input" type="checkbox" id="PhoneCheckBox">
+            <label class="form-check-label fw-bold" asp-for="PhoneCheckBox">Phone Number</label>
+            <input asp-for="PhoneNumber" class="form-control" id="PhoneInput" placeholder="1 (501) 209-1775" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row align-items-center mb-4 fw-bold">
+        <label asp-for="Supervisor" class="row-form-label mb-1">Supervisor</label>
+        <div>
+            <select asp-for="Supervisor" class="form-control form-select form-select-lg">
+                <option value="">Select A Supervisor</option>
+                @foreach (var supervisor in Model.Supervisors)
+                {
+                    <option value="@supervisor.SupervisorString">@supervisor.SupervisorString</option>
+                }
+            </select>
+            <span asp-validation-for="Supervisor" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group d-grid col-4 mx-auto">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>

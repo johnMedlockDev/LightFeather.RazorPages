@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightFeather.Api", "LightFeather.Api\LightFeather.Api.csproj", "{83F2CBD0-2BDE-4CCD-A19A-843B2631816E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightFeather.Domain", "LightFeather.Domain\LightFeather.Domain.csproj", "{3FE7E65D-E12A-4B7E-89DC-2E493C634BB4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E2D2BA47-8B92-444D-AF20-7793BD0F6D57}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\.editorconfig = ..\..\.editorconfig
+		docker-compose.yaml = docker-compose.yaml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightFeather.Ui", "LightFeather.Ui\LightFeather.Ui.csproj", "{AF0F66E7-051E-48E2-9A93-1B36BDB94A77}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightFeather.Infrastructure", "LightFeather.Infrastructure\LightFeather.Infrastructure.csproj", "{FB5C8914-DC7F-4227-8729-8D03282B6064}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83F2CBD0-2BDE-4CCD-A19A-843B2631816E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83F2CBD0-2BDE-4CCD-A19A-843B2631816E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83F2CBD0-2BDE-4CCD-A19A-843B2631816E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83F2CBD0-2BDE-4CCD-A19A-843B2631816E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FE7E65D-E12A-4B7E-89DC-2E493C634BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FE7E65D-E12A-4B7E-89DC-2E493C634BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FE7E65D-E12A-4B7E-89DC-2E493C634BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FE7E65D-E12A-4B7E-89DC-2E493C634BB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF0F66E7-051E-48E2-9A93-1B36BDB94A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF0F66E7-051E-48E2-9A93-1B36BDB94A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF0F66E7-051E-48E2-9A93-1B36BDB94A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF0F66E7-051E-48E2-9A93-1B36BDB94A77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB5C8914-DC7F-4227-8729-8D03282B6064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5C8914-DC7F-4227-8729-8D03282B6064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB5C8914-DC7F-4227-8729-8D03282B6064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB5C8914-DC7F-4227-8729-8D03282B6064}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D224DE58-F581-4C36-A1C9-B25C27E3F42F}
+	EndGlobalSection
+EndGlobal
